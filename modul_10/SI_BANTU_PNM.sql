@@ -173,7 +173,7 @@ WHERE tanggal_daftar >= '2026-10-01'
 Tahap 6 – Pemeliharaan Basis Data (Backup & Restore)
 
 -- Backup Menggunakan Command Line --
-mysqldump -u root -p --databases praktikum_modul10 > backup_modul10.sql
+mysqldump -u root -p --databases si_bantu > backup_modul10.sql
 
 -- Restore Menggunakan Command Line --
 mysql -u root -p < backup_modul10.sql
