@@ -1,3 +1,5 @@
+Tahap 2 – Implementasi Basis Data
+
 -- pembuatan tabel --
 CREATE TABLE berkas_pendaftaran (
     id_berkas VARCHAR(10) PRIMARY KEY,
@@ -30,6 +32,10 @@ SHOW CREATE TABLE pendaftaran;
 
 SHOW CREATE TABLE berkas_pendaftaran;
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Tahap 3 – Praktik Operasi Database (CRUD)
+
 -- CREATE --
 INSERT INTO mahasiswa
     (id_mahasiswa, nim, nama_mahasiswa)
@@ -37,8 +43,6 @@ VALUES
     ('M004', '24611006', 'Andi Pratama');
 -- periksa hasil --
 SELECT * FROM mahasiswa;
-
------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- READ --
 SELECT
@@ -78,6 +82,8 @@ DELETE FROM mahasiswa
 WHERE id_mahasiswa = 'M001';
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Tahap 4 – Pengujian Transaksi Database
 
 -- Pengujian COMMIT --
 START TRANSACTION;
@@ -128,6 +134,9 @@ FROM berkas_pendaftaran
 WHERE id_pendaftaran = 'P005';
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Tahap 5 – Analisis Performa Database
+
 -- Sebelum INDEX --
 EXPLAIN
 SELECT
@@ -160,3 +169,18 @@ WHERE tanggal_daftar >= '2026-10-01'
   AND tanggal_daftar < '2026-10-06';
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Tahap 6 – Pemeliharaan Basis Data (Backup & Restore)
+
+-- Backup Menggunakan Command Line --
+mysqldump -u root -p --databases praktikum_modul10 > backup_modul10.sql
+
+-- Restore Menggunakan Command Line --
+mysql -u root -p < backup_modul10.sql
+
+-- Validasi Hasil Restore --
+SHOW TABLES;
+SELECT COUNT(*) FROM mahasiswa;
+SELECT COUNT(*) FROM pendaftaran;
+SELECT COUNT(*) FROM program_bantuan;
+SELECT COUNT(*) FROM berkas_pendaftaran;
