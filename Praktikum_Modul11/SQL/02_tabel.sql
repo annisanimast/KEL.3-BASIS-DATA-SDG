@@ -11,8 +11,8 @@ CREATE TABLE program_bantuan (
     nama_program VARCHAR(150) NOT NULL,
     kategori VARCHAR(50) NOT NULL,
     tenggat_waktu DATE NOT NULL,
-    spesifikasi JSON NOT NULL,
-) ENGINE=InooDB;
+    spesifikasi JSON NOT NULL
+) ENGINE=InnoDB;
 
 -- Tabel Pendaftaran --
 CREATE TABLE pendaftaran (
