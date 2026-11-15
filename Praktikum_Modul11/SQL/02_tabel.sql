@@ -8,9 +8,11 @@ CREATE TABLE mahasiswa (
 -- Tabel Program Bantuan --
 CREATE TABLE program_bantuan (
     id_program VARCHAR(10) PRIMARY KEY,
-    nama_program VARCHAR(100) NOT NULL,
-    spesifikasi JSON NOT NULL
-) ENGINE=InnoDB;
+    nama_program VARCHAR(150) NOT NULL,
+    kategori VARCHAR(50) NOT NULL,
+    tenggat_waktu DATE NOT NULL,
+    spesifikasi JSON NOT NULL,
+) ENGINE=InooDB;
 
 -- Tabel Pendaftaran --
 CREATE TABLE pendaftaran (
