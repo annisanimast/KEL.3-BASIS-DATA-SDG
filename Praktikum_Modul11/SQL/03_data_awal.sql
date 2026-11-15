@@ -106,22 +106,3 @@ VALUES
 ('K001', 'Beasiswa Prestasi', 'Bantuan untuk mahasiswa berprestasi'),
 ('K002', 'Bantuan Ekonomi', 'Bantuan untuk mahasiswa yang membutuhkan'),
 ('K003', 'Bantuan Pendidikan', 'Bantuan untuk menunjang biaya pendidikan');
----------------------------------------------------------------------------------------------------------------------------------------------
-
--- Data Tabel Objek --
-INSERT INTO bantuan_objek
-(id_bantuan, nama_bantuan, jenis_bantuan, tenggat_waktu, atribut_khusus)
-VALUES
-('PB001', 'Beasiswa Prestasi Akademik PNM', 'Beasiswa Prestasi', '2026-11-30',
- '{"target": "Mahasiswa berprestasi", "kategori": "Akademik",
-   "persyaratan": ["KTM", "Transkrip Nilai"]}'),
-
-('PB002', 'Bantuan Biaya UKT Semester Genap', 'Bantuan Pendidikan', '2026-12-15',
- '{"target": "Mahasiswa yang membutuhkan bantuan biaya pendidikan",
-   "periode": "Semester Genap",
-   "persyaratan": ["KTM", "Kartu Keluarga"]}'),
-
-('PB003', 'Bantuan Biaya Hidup Mahasiswa', 'Bantuan Ekonomi', '2026-12-20',
- '{"target": "Mahasiswa dengan kondisi ekonomi kurang mampu",
-   "prioritas": "Mahasiswa dengan kondisi ekonomi kurang mampu",
-   "persyaratan": ["KTM", "Kartu Keluarga", "Surat Keterangan Penghasilan Orang Tua", "Surat Keterangan Tidak Mampu"]}');
