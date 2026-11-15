@@ -1,4 +1,4 @@
-no 6
+-- Membaca Atribut JSON --
 
 -- Atribut jenis
 SELECT
@@ -10,8 +10,6 @@ FROM program_bantuan;
 SELECT
     nama_program,
     JSON_EXTRACT(spesifikasi, '$.target') AS target_penerima
-no 6
-
 FROM program_bantuan;
 
 -- Atribut persyaratan (array)
@@ -22,8 +20,7 @@ FROM program_bantuan;
 
 -------------------------------------------------------------------------------------------
 
-no 7
-
+-- Mengubah Atribut JSON --
 UPDATE program_bantuan
 SET spesifikasi = JSON_SET(
     spesifikasi,
@@ -32,7 +29,7 @@ SET spesifikasi = JSON_SET(
 )
 WHERE nama_program = 'Bantuan Biaya UKT Semester Genap';
 
-periksa hasil
+-- periksa hasil
 
 SELECT
     nama_program,
@@ -42,8 +39,7 @@ WHERE nama_program = 'Bantuan Biaya UKT Semester Genap';
 
 -------------------------------------------------------------------------------------------
 
-no 8 
-
+-- Menambahkan Atribut JSON --
 UPDATE program_bantuan
 SET spesifikasi = JSON_SET(
     spesifikasi,
@@ -52,7 +48,7 @@ SET spesifikasi = JSON_SET(
 )
 WHERE nama_program = 'Beasiswa Prestasi Akademik PNM';
 
-periksa hasil 
+-- periksa hasil 
 
 SELECT
     nama_program,
@@ -62,8 +58,7 @@ WHERE nama_program = 'Beasiswa Prestasi Akademik PNM';
 
 -------------------------------------------------------------------------------------------
 
-no 9
-
+-- Menghapus Atribut JSON --
 UPDATE program_bantuan
 SET spesifikasi = JSON_REMOVE(
     spesifikasi,
@@ -80,8 +75,7 @@ FROM program_bantuan;
 
 -------------------------------------------------------------------------------------------
 
-no 10 
-
+-- Melakukan Pencarian Berdasarkan Atribut JSON --
 SELECT
     nama_program,
     kategori,
@@ -111,7 +105,7 @@ WHERE JSON_UNQUOTE(
 
 -------------------------------------------------------------------------------------------
 
-no 11
+-- Menguji Fungsi JSON Lainnya--
 
 -- Membuat objek JSON
 SELECT JSON_OBJECT(
