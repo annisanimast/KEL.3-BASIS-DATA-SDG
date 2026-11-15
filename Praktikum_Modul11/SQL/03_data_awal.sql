@@ -10,16 +10,12 @@ VALUES
 INSERT INTO program_bantuan (
     id_program,
     nama_program,
-    jenis_bantuan,
-    tanggal_berakhir,
     spesifikasi
 )
 VALUES
 (
     'PB001',
     'Beasiswa Prestasi Akademik PNM',
-    'Beasiswa',
-    '2026-11-30',
     '{
         "jenis": "Beasiswa Prestasi",
         "target": "Mahasiswa berprestasi",
@@ -33,8 +29,6 @@ VALUES
 (
     'PB002',
     'Bantuan Biaya UKT Semester Genap',
-    'Bantuan',
-    '2026-12-15',
     '{
         "jenis": "Bantuan Pendidikan",
         "target": "Mahasiswa yang membutuhkan bantuan biaya pendidikan",
