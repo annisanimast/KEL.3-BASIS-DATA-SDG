@@ -10,12 +10,16 @@ VALUES
 INSERT INTO program_bantuan (
     id_program,
     nama_program,
+    kategori,
+    tenggat_waktu,
     spesifikasi
 )
 VALUES
 (
     'PB001',
     'Beasiswa Prestasi Akademik PNM',
+    'Beasiswa',
+    '2026-11-30',
     '{
         "jenis": "Beasiswa Prestasi",
         "target": "Mahasiswa berprestasi",
@@ -25,10 +29,21 @@ VALUES
             "Transkrip Nilai"
         ]
     }'
-),
+);
+
+INSERT INTO program_bantuan (
+    id_program,
+    nama_program,
+    kategori,
+    tenggat_waktu,
+    spesifikasi
+)
+VALUES
 (
     'PB002',
     'Bantuan Biaya UKT Semester Genap',
+    'Bantuan',
+    '2026-12-15',
     '{
         "jenis": "Bantuan Pendidikan",
         "target": "Mahasiswa yang membutuhkan bantuan biaya pendidikan",
@@ -37,6 +52,32 @@ VALUES
             "KTM",
             "Kartu Keluarga"
         ]
+    }'
+);
+
+INSERT INTO program_bantuan (
+    id_program,
+    nama_program,
+    kategori,
+    tenggat_waktu,
+    spesifikasi
+)
+VALUES 
+(
+    'PB003',
+    'Bantuan Biaya Hidup Mahasiswa',
+    'Bantuan Ekonomi',
+    '2026-12-20',
+    '{
+        "jenis": "Bantuan Ekonomi",
+        "target": "Mahasiswa dengan kondisi ekonomi kurang mampu",
+        "persyaratan": [
+            "KTM",
+            "Kartu Keluarga",
+            "Surat Keterangan Penghasilan Orang Tua",
+            "Surat Keterangan Tidak Mampu"
+        ],
+        "prioritas": "Mahasiswa dengan kondisi ekonomi kurang mampu"
     }'
 );
 
