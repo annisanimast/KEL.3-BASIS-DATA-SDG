@@ -13,11 +13,3 @@ db.trips.insertMany([
   { trip_id: "T005", route_id: 12, started_at: "2026-11-05 17:20", status: "completed" },
   { trip_id: "T006", route_id: 15, started_at: "2026-11-06 09:15", status: "cancelled" }
 ]);
-
-// Jalankan Query (Aggregation Pipeline)
-db.trips.aggregate([
-  { $match: { route_id: 12, started_at: { $gte: "2026-11-01" } } },
-  { $lookup: { from: "routes", localField: "route_id", foreignField: "route_id", as: "rute" } },
-  { $unwind: "$rute" },
-  { $project: { _id: 0, trip_id: 1, started_at: 1, route_name: "$rute.route_name" } }
-]);
