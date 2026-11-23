@@ -5,3 +5,10 @@ db.trips.aggregate([
   { $unwind: "$rute" },
   { $project: { _id: 0, trip_id: 1, started_at: 1, route_name: "$rute.route_name" } }
 ]);
+
+// Inspeksi Eksekusi pada DBMS 
+db.trips.explain("executionStats").aggregate([
+  { $match: { status: "completed"} },
+  { $lookup: { from: "routes", localField: "route_id", as: "route" } }
+  { $count: "hasil_akhir"}
+])
